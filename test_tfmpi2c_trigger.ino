@@ -1,22 +1,30 @@
+/* A test program to compare externally-triggered vs. self-triggered 
+ *  operation in the Benewake TFMini-S LIDAR distance sensor. 
+ *  
+ *  Makes use of Bud Ryerson's TFMI2C library. 
+ *  
+ *  Free to use and modify for your own purposes. 
+ *  
+ *  J. Price, Digame Systems.
+ *  https://github.com/digamesystems
+ */  
+
 #include <Wire.h>     // Arduino standard I2C/Two-Wire Library
-#include <TFMPI2C.h>  // Include TFMini Plus LIDAR Library v1.5.0
-                      //   https://github.com/budryerson/TFMini-Plus
+#include <TFMPI2C.h>  // Include TFMini Plus LIDAR Library
+                      //   https://github.com/budryerson/TFMini-Plus-I2C
 
 TFMPI2C tfmP;
 
 bool    externalTrigger = true; // Use to select between Self/External triggering 
-uint8_t addr = 10;               // I2C address of my LIDAR sensor
+uint8_t addr = 10;              // I2C address of my LIDAR sensor
 
 //***************************************************************************
 void setup() {
 //*************************************************************************** 
   
   Serial.begin(115200);
-  
   delay(2000);
-  Serial.begin(115200);
-  
-  
+    
   Wire.begin();
   Wire.setClock(400000);  // 400KHz.
   
