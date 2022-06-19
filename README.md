@@ -1,6 +1,6 @@
 # test_tfmpi2c_trigger
 
-A test program to compare externally=triggered vs. self-triggered 
+A test program to compare externally-triggered vs. self-triggered 
 operation in the Benewake TFMini-S LIDAR distance sensor. 
   
 Makes use of Bud Ryerson's TFMI2C library.   
